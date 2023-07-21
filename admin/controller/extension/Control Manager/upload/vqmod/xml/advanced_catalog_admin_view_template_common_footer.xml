@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Advanced - catalog - admin - view - theme - template - common - footer</id>
+	<version>1.5.5.1</version>
+	<vqmver>2.2.3</vqmver>
+	<author>treoden@gmail.com-treodenthemes.com</author>
+	<file name="admin/view/template/common/footer.tpl">
+		<operation>
+			<search position="before"><![CDATA[
+				</body></html>
+			]]></search>
+			<add><![CDATA[ 
+				<script>
+					$(document).ready(function(){
+						$('li#catalog li').each(function(){
+							var old_href=$(this).children('a').attr('href');
+							if(old_href!=undefined)
+							{
+								var new_href = old_href.replace("category", "advanced_category");
+								$(this).children('a').attr('href', new_href);
+							}
+							var old_href=$(this).children('a').attr('href');
+							if(old_href!=undefined)
+							{
+								var new_href = old_href.replace("product", "advanced_product");
+								$(this).children('a').attr('href', new_href);
+							}
+						})
+					})
+				</script>
+			]]></add>
+		</operation>
+	</file>
+</modification>

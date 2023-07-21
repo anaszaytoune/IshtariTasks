@@ -1,0 +1,6 @@
+.quickedit-container{overflow:hidden;padding:10px}
+.quickedit-block input{border:1px solid #ccc;padding:5px}
+.quickedit-block select{border:1px solid #ccc;padding:5px}
+.quickedit-block{float:left;width:25%}
+.quickedit-block span.label{display:block;margin:5px 0px}
+.td-validate-error{color:red;margin-top:5px;margin-bottom:5px}

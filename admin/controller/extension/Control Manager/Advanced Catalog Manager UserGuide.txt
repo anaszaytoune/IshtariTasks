@@ -1,0 +1,45 @@
+﻿Opencart Module
+Advanced Catalog Manager
+
+Author                        : treoden
+Version                       : 1.0
+Original Release Date         : December 08 2014
+Opencart Compatibility        : v1.5.6.*
+Email                         : treoden@gmail.com
+Website 					  : treodenthemes.com
+
+Installation Guide : 
+Step 1:
+Copy the files from the upload directory to your target installation directory of OpenCart
+
+Overwrite 2 files : Manually or using vQmod
+
+I. Using vQmod : 
+	Install vQmod <http://www.inmotionhosting.com/support/edu/opencart/308-installing-vqmod-on-opencart>
+
+II. Manually : 
+	Open file admin/view/template/common/footer.tpl, and add following code before </body> tag:
+		<script>
+			$(document).ready(function(){
+				$('li#catalog li').each(function(){
+					var old_href=$(this).children('a').attr('href');
+					if(old_href!=undefined)
+					{
+						var new_href = old_href.replace("category", "advanced_category");
+						$(this).children('a').attr('href', new_href);
+					}
+					var old_href=$(this).children('a').attr('href');
+					if(old_href!=undefined)
+					{
+						var new_href = old_href.replace("product", "advanced_product");
+						$(this).children('a').attr('href', new_href);
+					}
+				})
+			})
+		</script>
+Step 2:
+1. In the Administration interface, choose Admin > Users > User Group
+2. Select Top Administrator, then click edit
+3. Add 2 controllers catalog/advanced_category and catalog/advanced_product to Access Permission and Modify Permission
+
+If you have anything need help, please contact: treoden@gmail.com.Thank you!!
